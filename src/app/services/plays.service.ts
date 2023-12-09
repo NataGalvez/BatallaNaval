@@ -1,14 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { Subscription, mergeMap, timer } from 'rxjs';
-
+import { environment } from '../../environments/enviroment';
 @Injectable({
   providedIn: 'root',
 })
 export class PlaysService {
-  private plays = [];
-  private urlApi = 'http://localhost:8080/api';
+  private urlApi = environment.url;
   constructor(private http: HttpClient) {}
   getGameStatus(idGame: number, idPlayer: number, namePlayer: string) {
     return this.http.get(
