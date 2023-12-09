@@ -12,7 +12,7 @@ import { PlaysService } from '../../services/plays.service';
 })
 export class BoardComponent {
   name = new FormControl('');
-  ZOMBIES_NEEDED = 4;
+  ZOMBIES_NEEDED = 20;
   board: any[] = [];
   rows = 10;
   columns = 10;
