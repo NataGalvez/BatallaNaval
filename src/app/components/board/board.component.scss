@@ -1,0 +1,243 @@
+.selecting-board {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.start-game-button {
+  border-radius: 35px;
+  background-color: var(--blue-battlezombie);
+  border: inherit;
+  padding: 20px 148px;
+  font-family: "Londrina Solid";
+  font-size: 24px;
+  color: var(--purple-battlezombie);
+}
+.fill-information {
+  font-family: "Londrina Solid";
+  font-size: 24px;
+  color: var(--purple-battlezombie);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 80px;
+
+  .start-game-button {
+    border-radius: 35px;
+    background-color: var(--blue-battlezombie);
+    border: inherit;
+    padding: 20px 148px;
+    font-family: "Londrina Solid";
+    font-size: 24px;
+    color: var(--purple-battlezombie);
+  }
+  .input-name {
+    border: solid 1px var(--blue-battlezombie);
+    border-radius: 5px;
+    height: 76px;
+    width: 100%;
+    font-family: "Londrina Solid";
+    font-size: 24px;
+    padding-left: 15px;
+  }
+}
+.board {
+  display: grid;
+  width: 500px;
+  height: 500px;
+  user-select: none;
+  div {
+    height: 50px !important;
+  }
+}
+.click {
+  width: 100%;
+}
+.container {
+  display: flex;
+  padding: 0 150px;
+}
+.playboard {
+  user-select: none;
+  margin-left: 0px;
+
+  display: grid;
+  width: 500px;
+  height: 500px;
+
+  div {
+    &:nth-child(1n) {
+      background: url("/assets/gramaclara.png") 0% 0% / cover;
+    }
+
+    &:nth-child(2n) {
+      background: url("/assets/gramaoscura.png") 0% 0% / cover;
+    }
+  }
+}
+.turnNotifier {
+  align-self: center;
+  .turnHand {
+    transition: transform 0.4s ease-in-out;
+    max-width: 172px;
+    margin: 0 20px;
+    &.myTurn {
+      transform: scaleY(-1) rotate(180deg);
+    }
+  }
+}
+
+.desktopInfo {
+  display: block;
+  > div {
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 120px;
+    display: flex;
+  }
+}
+.mobileInfo {
+  display: none;
+}
+
+// Media query para tablets
+@media (max-width: 1000px) {
+  h2 {
+    font-size: 24px;
+  }
+
+  .selecting-board {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .fill-information {
+    width: 80%;
+    padding: 0;
+    margin-top: 20px;
+    h3 {
+      font-size: 24px;
+    }
+    .input-name {
+      font-size: 24px;
+      height: 60px;
+    }
+    .start-game-button {
+      font-size: 24px;
+      padding: 15px 120px;
+    }
+  }
+  .container {
+    padding: 0 15px;
+  }
+}
+
+// Pone un tablero de 400px por 400px
+@media (max-width: 540px) {
+  h2 {
+    font-size: 14px;
+  }
+  .board,
+  .playboard {
+    width: 400px;
+    height: 400px;
+    div {
+      height: 40px !important;
+    }
+  }
+  .board {
+    margin-bottom: 20px;
+  }
+  .playboard {
+    margin-left: 0;
+  }
+  .click {
+    width: 100%;
+  }
+  .fill-information {
+    h3 {
+      font-size: 14px;
+    }
+    .input-name {
+      font-size: 14px;
+      height: 40px;
+    }
+    .start-game-button {
+      font-size: 14px;
+      padding: 12px 65px;
+    }
+  }
+  .container {
+    &.actualGame {
+      flex-direction: column;
+    }
+  }
+  .desktopInfo {
+    display: none;
+  }
+  .mobileInfo {
+    display: block;
+  }
+}
+// Pone un tablero de 320px por 320px
+@media (max-width: 400px) {
+  .board,
+  .playboard {
+    width: 320px;
+    height: 320px;
+    div {
+      height: 32px !important;
+    }
+  }
+}
+
+@media (max-width: 325px) {
+  h2 {
+    font-size: 12px;
+  }
+  .board,
+  .playboard {
+    width: 290px;
+    height: 290px;
+    div {
+      height: 29px !important;
+    }
+  }
+  .fill-information {
+    h3 {
+      font-size: 12px;
+    }
+    .input-name {
+      font-size: 12px;
+      height: 40px;
+    }
+    .start-game-button {
+      font-size: 12px;
+      padding: 10px 50px;
+    }
+  }
+}
+.loader__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loader__overlay--show {
+  background: rgb(159 154 97 / 80%);
+  z-index: 9000;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.loader__overlay--hide {
+  position: relative;
+  top: 0;
+  width: 0;
+  height: 0;
+}

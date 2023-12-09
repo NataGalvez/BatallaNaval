@@ -1,0 +1,30 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue-battlezombie);
+  height: 88px;
+  margin-top: 40px;
+
+  h4 {
+    font-size: 20px;
+    color: white;
+    padding-left: 12px;
+  }
+}
+@media (max-width: 1000px) {
+  .footer {
+    height: 130px;
+  }
+  h4 {
+    font-size: 18px !important;
+  }
+}
+@media (max-width: 500px) {
+  .footer {
+    height: 100px;
+  }
+  h4 {
+    font-size: 12px !important;
+  }
+}
